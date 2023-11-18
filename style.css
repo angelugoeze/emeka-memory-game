@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #60a990;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  color: #100b00;
+}
+
+header {
+  background-color: #f6f4d2;
+  text-align: center;
+  padding: 8px;
+}
+
+.heading {
+  text-transform: uppercase;
+  color: red;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100lvh;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.item {
+  position: relative;
+  height: 70px;
+  width: 70px;
+  background-color: #f6f4d2;
+  cursor: pointer;
+  transition-duration: 300ms;
+  display: grid;
+  place-items: center;
+  color: red;
+  font-size: 2.5rem;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition-duration: 300ms;
+  background-color: #6c6ea0;
+}
+
+.item.show::after {
+  height: 0;
+}
+
+.item.matched {
+  border: 2px solid rgb(247, 89, 112);
+}
+
+.item.matched::after {
+  height: 0;
+}
+
+.scoreboard {
+  background-color: #f6f4d2;
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+.scoreboard > p {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+#match-count {
+  color: red;
+  font-weight: bold;
+}
